@@ -3,9 +3,10 @@
 % Susan Massey
 % July 2016
 
+% CLOSE ANY FILES AND CLEAR WORKSPACE:
 clear all 
-% close all
-% clc
+close all
+clc
 
 % DECLARE GLOBAL PARAMETERS:
 global EC50 Qr ninitx Dp K km DrBar RhoRBar p0 r0 S_max decay
@@ -74,7 +75,6 @@ sol = pdepe(w,@SourceWoundPDEs,@WoundICs,@WoundBCs,nx,nt,options);
 % SAVE OUTPUT IN STRUCTURE
 WoundData(idx).r = sol(:,:,1); %r; 
 WoundData(idx).p = sol(:,:,2); %p; 
-% WoundData(idx).t = t; 
 
 % REPORT TIME OF SOLVE
 fprintf(['Simulation ',num2str(idx),' of ',num2str(I*J),' complete. \n']);
@@ -85,6 +85,5 @@ toc
 end;
 
 % SAVE WORKSPACE VARIABLES AND STRUCTURE
-
 save SourceWoundSimSet
 
