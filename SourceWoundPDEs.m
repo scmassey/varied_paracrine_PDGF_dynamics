@@ -15,7 +15,7 @@ Beta=p./(km+p);
 gamma = EC50/(km+EC50);
 BarFracR=(Beta)./(gamma+Beta);
 
-f = [DrBar*(1-((r)/K)).*BarFracR*DrDx; %-nchi.*r.*BarFracR.*Dp*(1-(r/K))
+f = [DrBar*(1-((r)/K)).*BarFracR*DrDx;
     Dp*DpDx];
 
 y = [RhoRBar*r*BarFracR*(1-(r/K));
